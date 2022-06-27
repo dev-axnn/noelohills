@@ -11,8 +11,8 @@ window.onload = function(){
     effect: "fade",
     // 페이지네이션(Swiper demo 에서 확인)
     pagination: {
-      el: ".sw-banner-pg",
-      clickable: true,
+      el: '.sw-banner-pg',
+      clickable: true
     },
     autoplay: {
       delay: 2500,
@@ -25,13 +25,13 @@ window.onload = function(){
   // visual 슬라이드
   new Swiper('.sw-visual', {
     loop: true,
-    pagination: {
-      el: "sw-visual-pg",
-      clickable: true,
-    },
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
     },
-  })
+    pagination: {
+      el: '.sw-visual-pg',
+      clickable: true
+    }
+  });
 };
