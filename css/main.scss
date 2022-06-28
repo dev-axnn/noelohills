@@ -24,6 +24,7 @@ img {
 
 html {
   font-size: 10px;
+  overflow: hidden;
 }
 
 body {
@@ -55,6 +56,121 @@ $innerwidth: 1320px;
 }
 
 /* ==== 개별클래스 ==== */
+
+/* MOBILE MENU */
+.mb-div {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  z-index: 99999;
+}
+
+.mb-bg {
+  position: relative;
+  width: 380px;
+  height: 100%;
+  padding: 0 30px;
+  background: #fff;
+}
+
+.mb-top {
+  position: relative;
+  display: block;
+  width: 320px;
+  padding-top: 35px;
+  padding-bottom: 20px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.mb-top-txt {
+  display: block;
+}
+
+.login {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  color: #ffcc00;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.mb-close {
+  position: absolute;
+  right: 0px;
+  bottom: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/btn-close.png') no-repeat center;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
+
+}
+
+.mb-wrap {
+  position: relative;
+  display: block;
+  width: 350px;
+}
+
+.mb-menu {
+  position: relative;
+  display: block;
+}
+.mb-menu > li {
+  position: relative;
+  display: block;
+  margin-bottom: 25px;
+}
+.mb-mainmenu {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #777;
+  font-weight: 500;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.mb-mainmanu::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background: url('../images/ico-gnb-link-m.png') no-repeat center;
+  background-size: contain;
+}
+.mb-mainmanu-open {
+  color: #ffcc00;
+}
+.mb-mainmanu-open::after {
+  background: url('../images/ico-gnb-m-active-up.png');
+}
+.mb-submenu {
+  position: relative;
+  display: none;
+}
+.mb-submenu li {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.mb-submenu li a {
+  position: relative;
+  display: block;
+  font-size: 14px;
+}
+
 /* TOPBANNER */
 .banner {
   position: relative;
@@ -275,84 +391,162 @@ $innerwidth: 1320px;
 .visual {
   position: relative;
   display: block;
-  height: 910px;
+
   .sw-visual {
     width: 100%;
     height: 100%;
+
     .swiper-slide a {
       position: relative;
       display: block;
       width: 100%;
       height: 100%;
-    }
-    .visual-1 {
-      background: url('../images/PC_minimal_new.png') no-repeat center;
-      background-size: cover;
-    }
-    .visual-2 {
-      background: url('../images/PC1_newborn.png') no-repeat center;
-      background-size: cover;
-    }
-    .visual-3 {
-      background: url('../images/PC2_BabyEssence.png') no-repeat center;
-      background-size: cover;
-    }
-    .visual-4 {
-      background: url('../images/PC3_Branding.png') no-repeat center;
-      background-size: cover;
-    }
-    .sw-visual-control {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 550px;
-      display: block;
-      z-index: 9;
-      .sw-visual-pg .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
-        background: #fff;
-        opacity: 1.0;
-        margin: 0 4px;
+
+      .visual-img {
+        position: relative;
+        display: block;
+        height: 600px;
       }
-      .sw-visual-pg .swiper-pagination-bullet-active {
-        background: #ffcf42;
+      .visual-1 {
+        background: url('../images/PC_minimal_new.png') no-repeat center;
+        background-size: cover;
       }
-    }
-    .visual-txt {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 645px;
-      display: block;
-      text-align: center;
-    }
-    .visual-title {
-      position: relative;
-      display: block;
-      font-size: 30px;
-      font-weight: 700;
-      color: #777;
-      margin-bottom: 20px;
-    }
-    .visual-desc {
-      position: relative;
-      display: block;
-      font-size: 20px;
-      font-weight: 500;
-      color: #777;
-      margin-bottom: 35px;
-    }
-    .visual-bt {
-      position: relative;
-      display: inline-block;
-      font-size: 20px;
-      color: #fff;
-      background: #ffcc00;
-      padding: 10px 20px;
+      .visual-2 {
+        background: url('../images/PC1_newborn.png') no-repeat center;
+        background-size: cover;
+      }
+      .visual-3 {
+        background: url('../images/PC2_BabyEssence.png') no-repeat center;
+        background-size: cover;
+      }
+      .visual-4 {
+        background: url('../images/PC3_Branding.png') no-repeat center;
+        background-size: cover;
+      }
+      .sw-visual-control {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 550px;
+        display: block;
+        z-index: 9;
+
+        .sw-visual-pg .swiper-pagination-bullet {
+          width: 10px;
+          height: 10px;
+          background: #fff;
+          opacity: 1.0;
+          margin: 0 4px;
+        }
+        .sw-visual-pg .swiper-pagination-bullet-active {
+          background: #ffcf42;
+        }
+      }
+      .visual-txt {
+        position: relative;
+        display: block;
+        text-align: center;
+        padding: 50px 0; 
+
+        .visual-title {
+          position: relative;
+          display: block;
+          font-size: 30px;
+          font-weight: 700;
+          color: #777;
+          margin-bottom: 20px;
+        }
+        .visual-desc {
+          position: relative;
+          display: block;
+          font-size: 20px;
+          font-weight: 500;
+          color: #777;
+          margin-bottom: 35px;
+        }
+        .visual-bt {
+          position: relative;
+          display: inline-block;
+          font-size: 20px;
+          color: #fff;
+          background: #ffcc00;
+          padding: 10px 20px;
+        }
+      }
     }
   }
 }
+
+// 모바일 버튼
+.mb-bt {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  width: 30px;
+  height: 23px;
+  background: url('../images/btn-menu-line.png') no-repeat center;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Visual 반응형 */
+@media all and (max-width: 1320px) {
+  .visual-img {
+    height: 45vw !important;
+  }
+  .sw-visual-control {
+    top: 41.66vw !important;
+  }
+  .visual-txt {
+    padding: 3.78vw 0 !important;
+  }
+}
+
+// 모바일용 이미지 적용
+@media all and (max-width: 800px) {
+  .visual-img {
+    height: 125vw !important;
+  }
+  .visual-1 {
+    background: url('../images/M_minimal_new.png') no-repeat center !important;
+  }
+  .visual-2 {
+    background: url('../images/M1_newborn.png') no-repeat center !important;
+  }
+  .visual-3 {
+    background: url('../images/M2_BabyEssence.png') no-repeat center !important;
+  }
+  .visual-4 {
+    background: url('../images/M3_Branding.png') no-repeat center !important;
+  }
+  .sw-visual-control {
+    top: 112.5vw !important;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .visual-img {
+    height: 124.4vw !important;
+  }
+  .visual-1 {
+    background: url('../images/v_480_1.png') no-repeat center !important;
+  }
+  .visual-2 {
+    background: url('../images/v_480_2.png') no-repeat center !important;
+  }
+  .visual-3 {
+    background: url('../images/v_480_3.png') no-repeat center !important;
+  }
+  .visual-4 {
+    background: url('../images/v_480_4.png') no-repeat center !important;
+  }
+  .sw-visual-control {
+    top: 115vw !important
+  }
+}
+
 
 /* CATEGORY */
 .category {
@@ -361,6 +555,7 @@ $innerwidth: 1320px;
   .inner {
     display: flex;
     flex-wrap: wrap;
+
     > div {
       position: relative;
       display: flex;
@@ -369,6 +564,7 @@ $innerwidth: 1320px;
       padding: 80px;
       align-content: center;
       flex-wrap: wrap;
+
       .category-desc {
         position: relative;
         display: block;
@@ -405,6 +601,32 @@ $innerwidth: 1320px;
   }
 }
 
+.wb2 {
+  position: absolute !important;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  display: none !important;
+  border: 2px solid #fff !important;
+  color: #fff !important;
+}
+
+/* Category 반응형 */
+@media all and (max-width: 1320px) {
+  .category .inner > div {
+    height: 47vw !important;
+  }
+}
+
+@media all and (max-width: 760px) {
+  .category .inner > div {
+    width: 100% !important;
+  }
+  .category-txt {
+    display: none !important;
+  }
+}
+
 /* SITEMAP */
 .sitemap {
   position: relative;
@@ -416,13 +638,13 @@ $innerwidth: 1320px;
     justify-content: center;
     .sitemap-menu {
       position: relative;
-      display: block;
+      display: table;
       width: 770px;
       > li {
         position: relative;
-        display: block;
-        float: left;
-        margin-right: 45px;
+        display: table-cell;
+        // float: left;
+        // margin-right: 45px;
         > a {
           position: relative;
           display: block;
@@ -455,6 +677,16 @@ $innerwidth: 1320px;
   }
 }
 
+/* Sitemap 반응형 */
+@media all and (max-width: 800px) {
+  .sitemap-menu {
+    padding: 0 20px;
+  }
+  .sitemap-menu li a {
+    font-size: 10px;
+  }
+}
+
 /* FOOTER */
 .footer {
   position: relative;
@@ -482,24 +714,18 @@ $innerwidth: 1320px;
         span {
           position: relative;
           display: inline-block;
-          margin-right: 40px;
+          margin-left: 20px;
           font-size: 12px;
-          font-weight: 500;
-          color: #7e868c;
+          font-weight: 400;
+          color: #777;
+
           em {
             position: relative;
             display: inline-block;
-            margin-left: 20px;
+            margin-right: 40px;
             font-size: 12px;
-            font-weight: 400;
-            color: #777;
-          }
-          a {
-            position: relative;
-            display: inline-block;
-            margin-left: 20px;
-            font-weight: 400;
-            color: #777;
+            font-weight: 500;
+            color: #7e868c;
           }
         }
       }
@@ -547,5 +773,36 @@ $innerwidth: 1320px;
         }
       }
     }
+  }
+}
+
+/* Footer 반응형 */
+@media all and (max-width: 800px) {
+  .footer .inner {
+    width: 100%;
+  }
+  
+  .footer-top .inner {
+    width: 100%;
+    padding-bottom: 35px;
+  }
+  .siteinfo-list {
+    padding: 0 20px;
+  }
+  .siteinfo-list li span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .siteinfo-list li span em {
+    width: 120px;
+  }
+  .copy {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .service-list {
+    width: 100%;
+    text-align: center;
   }
 }

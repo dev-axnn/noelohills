@@ -48,6 +48,63 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <!-- MOBILE MENU -->
+  <div class="mb-div">
+    <div class="mb-bg">
+      <div class="mb-top">
+        <span class="mb-top-txt">로그인이 필요합니다.</span>
+        <a href="#" class="login">LOGIN</a>
+        <button class="mb-close"></button>
+      </div>
+      <div class="mb-wrap">
+      <ul class="menu clearfix">
+        <li>
+          <span class="mb-mainmanu">SHOP</span>
+          <ul class="mb-submenu">
+            <li><a href="#">ALL PRODUCT</a></li>
+            <li><a href="#">NEWBORN</a></li>
+            <li><a href="#">BABY</a></li>
+            <li><a href="#">FAMILY</a></li>
+            <li><a href="#">BATH GOODS</a></li>
+            <li><a href="#">PRESENTS</a></li>
+          </ul>
+        </li>
+        <li>
+          <span class="mb-mainmanu">ABOUT</span>
+          <ul class="mb-submenu">
+            <li><a href="#">BRAND STORY</a></li>
+            <li><a href="#">WHO WE ARE</a></li>
+            <li><a href="#">MAKE A WISH</a></li>
+            <li><a href="#">PRESS</a></li>
+          </ul>
+        </li>
+        <li>
+          <span class="mb-mainmanu">TRUST</span>
+          <ul class="mb-submenu">
+            <li><a href="#">FOOD GRADE</a></li>
+            <li><a href="#">PENTACERA™</a></li>
+            <li><a href="#">BABY SKINCARE</a></li>
+            <li><a href="#">CERTIFICATION</a></li>
+            <li><a href="#">INGREDIENT</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="mb-mainmanu">STOKISTS</a>
+        </li>
+        <li>
+          <a href="#" class="mb-mainmanu">REVIEW</a>
+        </li>
+        <li>
+          <span class="mb-mainmanu">BENEFITS</span>
+          <ul class="mb-submenu">
+            <li><a href="#">EVENTS</a></li>
+            <li><a href="#">MEMBERS</a></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
   <!-- TOPBANNER -->
   <div class="banner">
     <div class="swiper-container sw-banner">
@@ -71,6 +128,7 @@
     <!-- HEADER -->
     <header class="header">
       <div class="inner">
+        <button class="mb-bt"></button>
         <a href="#" class="logo"></a>
         <div class="gnb">
           <ul class="menu clearfix">
@@ -136,7 +194,8 @@
         <!-- 슬라이드 내용물 -->
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="#" class="visual-1">
+            <a href="#">
+              <div class="visual-img visual-1"></div>
               <div class="visual-txt">
                 <h3 class="visual-title">미니멀비 출시</h3>
                 <span class="visual-desc">아이부터 어른까지<br>클린 포뮬러 저자극 케어</span>
@@ -145,7 +204,8 @@
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="#" class="visual-2">
+            <a href="#">
+              <div class="visual-img visual-2"></div>
               <div class="visual-txt">
                 <h3 class="visual-title">SPECIAL OFFER</h3>
                 <span class="visual-desc">노엘로힐스가 제안하는<br>아기 스킨케어 출산준비물</span>
@@ -154,7 +214,8 @@
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="#" class="visual-3">
+            <a href="#">
+              <div class="visual-img visual-3"></div>
               <div class="visual-txt">
                 <h3 class="visual-title">밀크 에센스 로션</h3>
                 <span class="visual-desc">국내 최초 100%<br>식품 그레이드 성분</span>
@@ -163,7 +224,8 @@
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="#" class="visual-4">
+            <a href="#">
+              <div class="visual-img visual-4"></div>
               <div class="visual-txt">
                 <h3 class="visual-title">8:23</h3>
                 <span class="visual-desc">가족에게 행복을 선사하는<br>스킨케어 라이프스타일 브랜드</span>
@@ -183,7 +245,7 @@
     <!-- CATEGORY -->
     <section class="category">
       <div class="inner">
-        <div class="category-img"></div>
+        <div class="category-img"><a href="#" class="category-link wb2">BABY</a></div>
         <div class="category-txt">
           <p class="category-desc">
             신생아의 피부가 완성되기 위해 필요한 시간은 4년. <br>
@@ -200,10 +262,7 @@
           <a href="#" class="category-link">FAMILY</a>
         </div>
 
-        <div class="category-img">
-          
-        </div>
-        <div class="category-img"></div>
+        <div class="category-img"><a href="#" class="category-link wb2">BATH GOODS</a></div>
         <div class="category-txt">
           <p class="category-desc">
             매일 저녁 찾아오는 행복한 목욕과 스킨케어 시간. <br>
@@ -212,6 +271,7 @@
           </p>
           <a href="#" class="category-link">BATH GOODS</a>
         </div>
+
         <div class="category-txt">
           <p class="category-desc">
             베이비샤워, 출산, 돌, 생일, 명절 등 특별한 기념일에는 센스있는 선물이 좋겠죠? <br>
@@ -220,7 +280,8 @@
           </p>
           <a href="#" class="category-link">PRESENTS</a>
         </div>
-        <div class="category-img"></div>
+
+        <div class="category-img"><a href="#" class="category-link wb2">PRESENTS</a></div>
       </div>
     </section>
     <!-- //CATEGORY -->
@@ -282,9 +343,9 @@
       <div class="footer-top">
         <div class="inner">
           <ul class="siteinfo-list">
-            <li><span>상호 <em>주식회사 세손</em></span><span>대표자명 <em>김정아</em></span><span>대표전화번호 <em>1600-6274</em></span><span>개인정보관련책임자 <a>임지은(help@seisson.com)</a></span></li>
-            <li><span>사업장소재지 <em>04378 서울특별시 용산구 한강대로 95 (한강로2가) 제에이동 15층 1515호</em></span></li>
-            <li><span>사업자등록번호 <em>183-86-01860</em></span><span>통신판매업 신고번호 <em>제2021-서울용산-0634호</em></span></li>
+            <li><span><em>상호</em> 주식회사 세손</span><span><em>대표자명</em> 김정아</span><span>대표전화번호 <em>1600-6274</em></span><span><em>개인정보관련책임자</em> <a>임지은(help@seisson.com)</a></span></li>
+            <li><span><em>사업장소재지</em> 04378 서울특별시 용산구 한강대로 95 (한강로2가) 제에이동 15층 1515호</span></li>
+            <li><span><em>사업자등록번호</em> 183-86-01860</span><span><em>통신판매업 신고번호</em> 제2021-서울용산-0634호</span></li>
           </ul>
           <a href="#" class="insta-link"></a>
         </div>
