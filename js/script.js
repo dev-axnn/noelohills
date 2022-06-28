@@ -18,9 +18,9 @@ $(document).ready(function(){
     mb_div.hide();
   });
   // 내용을 클릭하면 닫기지 않도록 방지
-  $('.mb-top, mb-wrap').click(function(event){
+  $('.mb-bg').click(function(event){
     // 신호 전달 막기
-    event.stopPropegation();
+    event.stopPropagation();
   });
 
   
@@ -35,7 +35,8 @@ $(document).ready(function(){
       if(result == true) {
         // 펼쳐진 클래스를 가진 경우
         temp.removeClass('mb-mainmenu-open');
-        // 펼쳐진 서브 메뉴 
+        // 펼쳐진 서브 메뉴 닫기
+        mb_menu_li.find('.mb-submenu').hide();
         
       }else{
         // 모든 클래스 일단 제거
@@ -43,7 +44,7 @@ $(document).ready(function(){
         // 펼쳐진 서브 메뉴 닫기
         mb_menu_li.find('.mb-submenu').hide();
         // 펼쳐진 클래스가 없는 경우
-        temp.addClass('mb-mainmenu-opem');
+        temp.addClass('mb-mainmenu-open');
         // 서브메뉴 펼치기
         mb_menu_li.eq(index).find('.mb-submenu').show();
       }
@@ -65,12 +66,40 @@ $(document).ready(function(){
 
 // 멀티미디어 요소 로딩 완료 후 실행
 window.onload = function(){
+  // 스크롤시 header 고정
+  let header = $('.header');
+  let wrap = $('.wrap');
+  // 사라지는 시점 px 값
+  // banner 의 높이값 px
+  let fixY = $('.banner').height();
+
+  $(window).scroll(function(){
+    // 스크롤바의 세로상단 px 값
+    let temp = $(window).scrollTop();
+    // 50 은 banner 의 높이값 px
+    if(temp > fixY) {
+      header.addClass('header-fix');
+      wrap.addClass('wrap-fix');
+    }else{
+      header.removeClass('header-fix');
+      wrap.removeClass('wrap-fix');
+    }
+  });
+
+  // 상단 배너 닫기 기능
+  let banner_close = $('.banner-close');
+  banner_close.click(function(){
+    // 배너가 보여지지 않으므로 값을 제거
+    fixY = 0;
+    $('.banner').slideUp(300);
+  });
+
   // 상단 배너 슬라이드
   new Swiper('.sw-banner', {
     loop: true,
     // fade 효과(Swiper demo 에서 확인)
     effect: "fade",
-    // 페이지네이션(Swiper demo 에서 확인)
+    // Pagination(Swiper demo 에서 확인, 클릭 가능)
     pagination: {
       el: '.sw-banner-pg',
       clickable: true
