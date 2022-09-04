@@ -1,3 +1,14 @@
+$(document).ready(function(){
+  // Modal 기능
+  let modalWrap = $('.modal-wrap');
+  let modalClose = $('.modal-close');
+  // click() 을 이용해서 hide() 해보자!
+  modalClose.click(function(){
+    // modalWrap.hide();
+    modalWrap.stop().fadeOut(300);
+  });
+});
+
 // 멀티미디어 요소 로딩 전 실행
 $(document).ready(function(){
   // 모바일 메뉴
