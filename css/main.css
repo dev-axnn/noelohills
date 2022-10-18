@@ -12,7 +12,8 @@ a {
   text-decoration: none;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -36,22 +37,22 @@ body {
 }
 
 ::-moz-selection {
-  background: #1ABC9C;
+  background: #1abc9c;
   color: #fff;
 }
 
 ::selection {
-  background: #1ABC9C;
+  background: #1abc9c;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #1ABC9C;
+  background: #1abc9c;
   color: #fff;
 }
 
 ::-webkit-selection {
-  background: #1ABC9C;
+  background: #1abc9c;
   color: #fff;
 }
 
@@ -76,7 +77,6 @@ body {
 /* Modal Popup */
 .modal-wrap {
   font-family: "Noto Sans KR", Helvetica, "맑은 고딕", "malgun gothic", "Apple SD Gothic Neo", sans-serif;
-  color: #333;
   position: fixed;
   left: 0;
   top: 0;
@@ -115,10 +115,10 @@ body {
   text-align: center;
   letter-spacing: -1.2px;
 }
-.modal-wrap .modal-main .modal-notice strong {
+.modal-wrap .modal-main .modal-notice .modal-notice strong {
   color: #ec3f87;
 }
-.modal-wrap .modal-main .modal-notice span {
+.modal-wrap .modal-main .modal-notice .modal-notice span {
   display: block;
   font-size: 14px;
   font-weight: 400;
@@ -146,7 +146,7 @@ body {
   padding: 15px 20px;
   letter-spacing: -0.8px;
 }
-.modal-wrap .modal-main .modal-corrections strong {
+.modal-wrap .modal-main .modal-corrections .modal-corrections strong {
   display: block;
   width: 100%;
   font-size: 14px;
@@ -178,13 +178,95 @@ body {
   cursor: pointer;
   background: #00b7ff;
 }
-.modal-wrap .modal-main .modal-close i {
+.modal-wrap .modal-main .modal-close .modal-close i {
   margin-left: 3px;
   font-size: 12px;
   font-weight: 400;
   font-style: normal;
 }
 
+@media all and (max-width: 700px) {
+  .modal-main {
+    width: 71vw !important;
+    height: 57vw !important;
+  }
+  .modal-notice {
+    padding: 15% 6% 6% 6% !important;
+    font-size: 2.4vw !important;
+    line-height: 3.2vw !important;
+  }
+  .modal-notice span {
+    font-size: 2.3vw !important;
+    margin-top: 2% !important;
+  }
+  .modal-logo {
+    width: 12.3vw !important;
+    height: 12.3vw !important;
+    border: 0.5vw solid #fff !important;
+  }
+  .modal-corrections {
+    width: 88% !important;
+    height: 33.75% !important;
+    padding: 2vw 3vw !important;
+  }
+  .modal-close {
+    width: 71.1vw !important;
+    height: 6.5vw !important;
+    font-size: 2.5vw !important;
+    line-height: 6.5vw !important;
+  }
+  .modal-close i {
+    font-size: 2.3vw !important;
+  }
+}
+@media all and (max-width: 550px) {
+  .modal-main {
+    width: 300px !important;
+    height: 245px !important;
+  }
+  .modal-notice {
+    padding: 15% 6% 5% 6% !important;
+    font-size: 12px !important;
+    line-height: 15px !important;
+  }
+  .modal-notice span {
+    font-size: 11px !important;
+  }
+  .modal-logo {
+    width: 60px !important;
+    height: 60px !important;
+    border: 0.5vw solid #fff !important;
+  }
+  .modal-corrections {
+    width: 260px !important;
+    height: 80px !important;
+    padding: 10px 15px !important;
+    font-size: 10px !important;
+    line-height: 14px !important;
+  }
+  .modal-corrections strong {
+    font-size: 11px !important;
+    margin-bottom: 4px !important;
+    line-height: 14px !important;
+  }
+  .corrections-number {
+    float: left !important;
+    width: 6% !important;
+  }
+  .corrections-txt {
+    float: right !important;
+    width: 94% !important;
+  }
+  .modal-close {
+    width: 301px !important;
+    height: 25px !important;
+    font-size: 11px !important;
+    line-height: 25px !important;
+  }
+  .modal-close i {
+    display: none;
+  }
+}
 /* /Modal Popup */
 /* MOBILE MENU */
 .mb-div {
